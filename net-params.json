@@ -1,0 +1,11 @@
+[
+    {
+        "ParameterKey": "BaseInfrastructure",
+        "ParameterValue": "MyProject"
+    },
+    {
+        "ParameterKey": "VpcCIDR",
+        "ParameterValue": "10.0.0.0/16"
+    }
+
+]
