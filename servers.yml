@@ -1,0 +1,48 @@
+Description: This template deploys the servers and other resources for our applications.
+
+Parameters:
+    BaseInfrastructure:
+        Description: This name will be prefixed to all the resources.
+        Type: String
+
+Resources: 
+
+# Security Group for Load Balancer
+    LBSecurityGroup:
+        Type: AWS::EC2::SecurityGroup
+        Properties:
+            GroupDescription: Allow http to our load balancer
+            VpcId:
+                Fn::ImportValue: !Sub "${BaseInfrastructure}-VPCID"
+            SecurityGroupIngress: #Allowing inbound traffic on port 80
+                - IpProtocol: tcp
+                  FromPort: 80
+                  ToPort: 80
+                  CidrIp: 0.0.0.0/0
+            SecurityGroupEgress: #Allowing outbound traffic on port 80
+                - IpProtocol: tcp
+                  FromPort: 80
+                  ToPort: 80
+                  CidrIp: 0.0.0.0/0
+
+ # Security group for our webservers
+    WebServerSecurityGroup:
+        Type: AWS::EC2::SecurityGroup
+        Properties:
+            GroupDescription: Allow http to our hosts and SSH from local only
+            VpcId:
+                Fn::ImportValue: !Sub "${BaseInfrastructure}-VPCID"
+            SecurityGroupIngress: #Allowing inbound traffic on port 80 for accessing application and on port 22 for SSH.
+                - IpProtocol: tcp
+                  FromPort: 80
+                  ToPort: 80
+                  CidrIp: 0.0.0.0/0
+                - IpProtocol: tcp
+                  FromPort: 22
+                  ToPort: 22
+                  CidrIp: 0.0.0.0/0
+            SecurityGroupEgress: # Allowing outbound traffic on all ports so that updates or patches can be downloaded.
+                - IpProtocol: tcp
+                  FromPort: 0
+                  ToPort: 65535
+                  CidrIp: 0.0.0.0/0
