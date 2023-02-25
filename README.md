@@ -1,1 +1,1 @@
-Provision IT infrastructure resources using cloudformation templates
+## sample templates for provisioning various aws cloud services using AWS CloudFormation ##
