@@ -1,7 +1,7 @@
 [
     {
         "ParameterKey": "BaseInfrastructure",
-        "ParameterValue": "MyProject"
+        "ParameterValue": "MyNetwork"
     },
     {
         "ParameterKey": "VpcCIDR",

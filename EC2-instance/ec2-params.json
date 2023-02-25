@@ -1,0 +1,20 @@
+[
+    
+    {
+        "ParameterKey": "KeyPairName",
+        "ParameterValue": "myserver"
+    },
+    {
+        "ParameterKey": "InstanceImageId",
+        "ParameterValue": "ami-0aa7d40eeae50c9a9"
+    },
+    {
+        "ParameterKey": "EnvironmentType",
+        "ParameterValue": "dev"
+    },
+
+    {
+        "ParameterKey": "AvailabilityZone",
+        "ParameterValue": "us-east-1b"
+    }
+]

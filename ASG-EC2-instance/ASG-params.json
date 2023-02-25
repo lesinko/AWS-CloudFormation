@@ -1,0 +1,10 @@
+[
+    {
+        "ParameterKey": "KeyName",
+        "ParameterValue": "myserver"
+    },
+    {
+        "ParameterKey": "VpcId",
+        "ParameterValue": "vpc-0198c952ea1569a2d"
+    }
+]

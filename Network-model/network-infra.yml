@@ -1,4 +1,4 @@
-Description: This template deploys networking components for our different applications hosted in the cloud environment.
+Description: This template deploys networking components for our different applications hosted in the cloud infrastructure.
 
 Parameters:
     BaseInfrastructure:
@@ -107,7 +107,7 @@ Resources:
                 - Key: Name
                   Value: !Sub ${BaseInfrastructure} Private Subnet (AZ2)
 
-    # Elastic IP for first NAT Gateway for 
+    # Elastic IP for first NAT Gateway 
     NatGateway1EIP:
         Type: AWS::EC2::EIP
         DependsOn: InternetGatewayAttachment
